@@ -6,9 +6,9 @@ const Navbar = () => {
   const { authUser } = useAuthContext();
 
   return (
-    <div className="flex items-center justify-between w-full px-4 py-2 text-white bg-[#24292F] rounded-md">
-      <h1 className="text-xl font-bold">Technical Abhi</h1>
-      <div className="flex gap-4">
+    <div className="flex items-center justify-between w-full px-4 py-2 sm:mx-1 text-white bg-[#24292F] rounded-md">
+      <h1 className="text-xl sm:text-lg font-bold">Technical Abhi</h1>
+      <div className="flex gap-4 sm:gap-3">
         <NavLink
           to="/"
           className=" hover:text-lime-400"
