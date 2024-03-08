@@ -18,25 +18,29 @@ const userSchema = new mongoose.Schema(
     avatarUrl: {
       type: String,
     },
-    likedProfiles: {
-      type: [String],
-      default: [],
+    accessToken: {
+      type: String,
+      required: true,
     },
-    likedBy: [
-      {
-        username: {
-          type: String,
-          required: true,
-        },
-        avatarUrl: {
-          type: String,
-        },
-        likedDate: {
-          type: Date,
-          default: Date.now,
-        },
-      },
-    ],
+    // likedProfiles: {
+    //   type: [String],
+    //   default: [],
+    // },
+    // likedBy: [
+    //   {
+    //     username: {
+    //       type: String,
+    //       required: true,
+    //     },
+    //     avatarUrl: {
+    //       type: String,
+    //     },
+    //     likedDate: {
+    //       type: Date,
+    //       default: Date.now,
+    //     },
+    //   },
+    // ],
   },
   { timestamps: true }
 );

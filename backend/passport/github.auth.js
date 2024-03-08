@@ -27,6 +27,19 @@ passport.use(
     },
     async function (accessToken, refreshToken, profile, done) {
       const user = await User.findOne({ username: profile.username });
+
+      // modify access token to be stored in the database.
+      // accessToken is the token we get from the github api when the user logs in.
+
+      // login
+      if (user) {
+        user.accessToken = accessToken;
+        await user.save({
+          validateBeforeSave: false,
+        });
+        done(null, user);
+      }
+
       // signup
       if (!user) {
         const newUser = new User({
@@ -34,8 +47,7 @@ passport.use(
           username: profile.username,
           profileUrl: profile.profileUrl,
           avatarUrl: profile.photos[0].value,
-          likedProfiles: [],
-          likedBy: [],
+          accessToken: accessToken,
         });
         await newUser.save();
         done(null, newUser);
