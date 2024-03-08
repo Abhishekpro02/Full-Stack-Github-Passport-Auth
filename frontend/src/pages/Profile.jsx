@@ -29,9 +29,9 @@ const Profile = () => {
             className="w-20 h-20 rounded-full"
           />
           <h1 className="text-xl font-bold text-white">{authUser?.name}</h1>
-          <p className="text-gray-500">{authUser?.username}</p>
-          <h3 className="text-yellow-500">My Access Token 🔐</h3>
-          <p className="text-green-500">{authUser?.accessToken}</p>
+          <h2 className="text-gray-500">{authUser?.username}</h2>
+          <h3 className="text-red-500">My Access Token 🔐</h3>
+          <p className="text-green-500 text-sm">{authUser?.accessToken}</p>
           <p className="text-yellow-500">
             Profile Page :{" "}
             <a
