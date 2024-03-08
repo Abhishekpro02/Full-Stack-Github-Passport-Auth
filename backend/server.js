@@ -24,13 +24,15 @@ const __dirname = path.resolve();
 //     credentials: true,
 //   })
 // );
-
+const oneWeek = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
 app.use(
   session({
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    maxAge: 3600000,
+    cookie: {
+      maxAge: oneWeek,
+    },
   })
 );
 // Initialize Passport!  Also use passport.session() middleware, to support
