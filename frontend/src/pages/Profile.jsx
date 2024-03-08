@@ -30,10 +30,8 @@ const Profile = () => {
           />
           <h1 className="text-xl font-bold text-white">{authUser?.name}</h1>
           <p className="text-gray-500">{authUser?.username}</p>
-          <p className="text-yellow-500">
-            My Access Token :{" "}
-            <span className="text-green-500">{authUser?.accessToken}</span>
-          </p>
+          <h3 className="text-yellow-500">My Access Token 🔐</h3>
+          <p className="text-green-500">{authUser?.accessToken}</p>
           <p className="text-yellow-500">
             Profile Page :{" "}
             <a
