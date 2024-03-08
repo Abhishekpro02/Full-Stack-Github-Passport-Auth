@@ -30,12 +30,7 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    cookie: {
-      secure: true,
-      maxAge: 1000 * 60 * 60 * 24 * 7,
-      httpOnly: true,
-      sameSite: "none",
-    },
+    maxAge: 3600000,
   })
 );
 // Initialize Passport!  Also use passport.session() middleware, to support
